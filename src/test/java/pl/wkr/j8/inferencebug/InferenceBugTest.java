@@ -25,9 +25,7 @@ public class InferenceBugTest {
     @Test
     public void should_infer_method() {
         methodA(methodB());
-
-        /*
-
+        /* ^^^
         Java 1.7 compiles this, but in 1.8(1.8.0_25) I get error:
 
           error: reference to methodA is ambiguous
@@ -42,8 +40,6 @@ public class InferenceBugTest {
            (change 'sourceCompatibility' in build.gradle to see behavior in java 1.7 and 1.8)
          */
     }
-
-
 }
 
 
