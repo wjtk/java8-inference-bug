@@ -36,8 +36,15 @@ public class InferenceBugTest {
             T#1 extends Object declared in method <T#1>methodA(Iterator<T#1>)
             T#2 extends Object declared in method <T#2>methodA(Iterable<T#2>)
 
-          -------------
+        ---
+        Try in 1.7:
            (change 'sourceCompatibility' in build.gradle to see behavior in java 1.7 and 1.8)
+           
+        ---   
+        Workaround:
+            methodA((Throwable) methodB());
+            
+        but this is ugly and should be inferred as in 1.7.                    
          */
     }
 }
